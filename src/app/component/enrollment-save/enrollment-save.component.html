@@ -1,0 +1,37 @@
+<div class="container">
+    <h2>Create Enrollment</h2>
+   
+    <div class="form-row" *ngIf="showMsg">
+        <div class="alert alert-{{type}} cold-md-12" role="alert">
+            {{msg}}
+        </div>
+    </div>
+
+    <form #enrollmentForm="ngForm">
+        <div class="form-row">
+            <div class="cold-md-4">
+                <label>EnrollmentID:</label>
+                <input type="text" id="enrollmentID" name="enrollemntID" placeholder="Enther the course ID" class="form-control" 
+                #enrollmentID [(ngModel)]="enrollment.EnrollmentID"/>
+            </div>
+            <div class="cold-md-4">
+                <label>CourseID:</label>
+                <input type="text" id="courseid" name="courseid" placeholder="Enther the title" class="form-control" 
+                #courseid [(ngModel)]="enrollment.CourseID"/>
+            </div>
+            <div class="cold-md-4">
+                <label>StudentID:</label>
+                <input type="text" id="studentid" name="studentid" placeholder="Enther the credits" class="form-control" 
+                #studentid [(ngModel)]="course.Credits"/>
+
+            </div>
+
+        </div>
+
+        <br>
+        <div class="btn-group" role="group">
+        <button class="btn btn-outline-primary btn-sm" (click)="save()">save</button>
+        <a class="btn btn-outline-primary btn-sm" [routerLink]="[ '/enrollement-list']">Back</a>
+    </div>
+    </form> 
+</div>

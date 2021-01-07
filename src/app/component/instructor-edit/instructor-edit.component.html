@@ -1,0 +1,50 @@
+<div class="container">
+    <h2>Edit Instructor</h2>
+
+    <div class="form-row" *ngIf="showMsg">
+        <div class="alert alert-{{type}} col-md-12" role="alert">
+            {{msg}}
+        </div>
+    </div>
+
+    <form #instructorForm="ngForm" **ngIf="instructor">
+        <div class="form-row">
+            <div class="col-md-5">
+                <label>ID:</label>
+                <input type="text" id="ID" name="ID" placeholder="Ingrese su código" class="form-control" #ID
+                    [(ngModel)]="instructor.ID" readonly />
+            </div>
+
+            <div class="col-md-5">
+                <label>LastName:</label>
+                <input type="text" id="lastname" name="lastname" placeholder="Ingrese su código" class="form-control"
+                    #LastName [(ngModel)]="instructor.LastName" />
+            </div>
+
+            <div class="col-md-5">
+                <label>FirstMidName:</label>
+                <input type="text" id="firstmidname" name="firstmidname" placeholder="Ingrese su código"
+                    class="form-control" #FirstMidName [(ngModel)]="instructor.FirstMidName" />
+            </div>
+
+            <div class="col-md-5">
+                <label>HireDate:</label>
+                <input type="text" id="hiredate" name="hiredate" placeholder="Ingrese su código" class="form-control"
+                    #HireDate [(ngModel)]="instructor.HireDate" />
+            </div>
+
+            <div class="col-md-5">
+                <label>FullNane:</label>
+                <input type="text" id="fullnane" name="fullnane" placeholder="Ingrese su código" class="form-control"
+                    #FullNane [(ngModel)]="instructor.FullNane" />
+            </div>   
+        </div>
+        
+        <br>
+    <div class="btn-group" role="group">
+        <button class="btn btn-ouline-primary btn-sm" (click)="edit()">Edit</button>
+        <a class="btn btn-ouline-primary btn-sm" [routerLink]="[ '/instructor-list']">Back</a>
+    </div>
+    </form>
+
+</div>

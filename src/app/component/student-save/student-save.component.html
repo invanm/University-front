@@ -1,0 +1,51 @@
+<div class="container">
+    
+    <h2>Create Student</h2>
+    <div class="form-row" *ngIf="showMsg">
+        <div class="alert alert-{{type}} col-md-12" role="alert">
+            {{msg}}
+        </div>
+    </div>
+
+    <form #studentForm="ngForm">
+        <div class="form-row">
+
+            <div class="col-md-5">
+                <label>ID:</label>
+                <input type="text" id="ID" name="ID" placeholder="Ingrese el código de estudiante" class="form-control"
+                    #ID [(ngModel)]="student.ID" />
+            </div>
+
+            <div class="col-md-5">
+                <label>LastName:</label>
+                <input type="text" id="lastname" name="lastname" placeholder="Ingrese el código de estudiante"
+                    class="form-control" #lastname [(ngModel)]="student.LastName" />
+            </div>
+
+            <div class="col-md-5">
+                <label>FirstMidName:</label>
+                <input type="text" id="firstmidname" name="firstmidname" placeholder="Ingrese el código de estudiante"
+                    class="form-control" #firstmidname [(ngModel)]="student.FirstMidName" />
+            </div>
+
+            <div class="col-md-5">
+                <label>EnrollmentDate:</label>
+                <input type="text" id="enrollmentdate" name="enrollmentdate"
+                    placeholder="Ingrese el código de estudiante" class="form-control" #enrollmentdate
+                    [(ngModel)]="student.EnrollmentDate" />
+            </div>
+
+            <div class="col-md-5">
+                <label>FullName:</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Ingrese el código de estudiante"
+                    class="form-control" #fullname [(ngModel)]="student.FullName" />
+            </div>
+        </div>
+
+        <br>
+        <div class="btn-group" role="group">
+            <button class="btn btn-outline-primary btn-sm" (click)="save()">Save</button>
+            <a class="btn btn-outline-primary btn-sm" [routerLink]="[ '/student-list']">Back</a>
+        </div>
+    </form>
+</div>
